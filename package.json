@@ -1,0 +1,22 @@
+{
+  "name": "ytd",
+  "version": "1.0.0",
+  "description": "Youtube Downloader",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "siddhant tiwary",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "child_process": "^1.0.2",
+    "express": "^4.17.1",
+    "ffmpeg-static": "^4.2.7",
+    "fluent-ffmpeg": "^2.1.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
+    "ytdl-core": "^4.0.5"
+  }
+}
