@@ -11,8 +11,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 
-app.get("/:id",(req,res,next)=>{
+app.get("/:id/:name",(req,res,next)=>{
     id = req.params.id
+    fName=req.params.name
     ref = `https://www.youtube.com/watch?v=${id}`
 
     // const writeableStream=fs.createWriteStream(`video.mp4`)
@@ -72,16 +73,14 @@ app.get("/:id",(req,res,next)=>{
       audio.pipe(ffmpegProcess.stdio[4]);
       video.pipe(ffmpegProcess.stdio[5]);
 
-      const writeableStream=fs.createWriteStream('./video.mkv')
+      const writeableStream=fs.createWriteStream(`./${fName}.mkv`)
 
       ffmpegProcess.stdio[6].pipe(writeableStream);
       writeableStream.on('finish',()=>{
         console.log(`downloaded successfully`);
-        res.download(__dirname+'/video.mkv');
+        res.download(__dirname+`/${fName}.mkv`);
       })
       
     })
 
 module.exports=app
-
-
