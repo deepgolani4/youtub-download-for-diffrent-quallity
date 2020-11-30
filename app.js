@@ -41,7 +41,7 @@ app.get("/:id/:name",(req,res,next)=>{
         '-itsoffset', '3.0', '-i', 'pipe:4',
         '-i', 'pipe:5',
         // Rescale the video
-        '-vf', 'scale=1080:1920',
+        '-vf', 'scale=640:360',
         // Choose some fancy codes
         '-c:v', 'libx265', '-x265-params', 'log-level=0',
         '-c:a', 'flac',
